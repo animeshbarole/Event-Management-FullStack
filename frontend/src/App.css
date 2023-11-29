@@ -1,0 +1,39 @@
+.formContainer {
+
+    background: linear-gradient(-45deg, #eb6e48, #dd296e, #1ca5d7, #18d9ac);
+    background-size: 400% 400%;
+    animation: gradient 6s ease infinite;
+    background-color: #a7bcff;
+    height:  100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+   
+}
+
+
+.formWrapper{
+  
+    background-color:white;
+    padding: 20px 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+
+
+   
+  }
+
+.logo{
+    color: #5d5b8d;
+    font-weight: bold;
+    font-size: 24px;
+  
+}
+.title{
+    color: #5d5b8d;
+    font-size: 20px;
+}
