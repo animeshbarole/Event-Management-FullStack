@@ -5,6 +5,7 @@ import { Route,Routes } from 'react-router-dom';
 import Login  from './pages/login';
 import Home from './pages/home';
 import YourEvents from './pages/yourEvents';
+import Register from './pages/register'
 import UpcomingEvents from './pages/upcomingEvents';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/eventform" element={<EventForm />} />
           <Route path="/yourEvents" element={<YourEvents />} />
           <Route path="/login" element={<Login />} />
+          <Route path = "/register"element ={<Register/>}></Route>  
           <Route path="/upcomingEvents" element={<UpcomingEvents />} />
          
 
