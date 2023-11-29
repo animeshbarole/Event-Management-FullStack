@@ -8,9 +8,9 @@ const Home = () => {
    
     const navigate = useNavigate();
 
-    const navigateToContacts = () => {
-        // 👇️ navigate to /contacts
-        navigate('/yourEvents');
+    const navigateToForm = () => {
+       
+        navigate('/eventform');
       };
     
    
@@ -31,7 +31,7 @@ const Home = () => {
        
        <p> If you want to Create your own Event Please Click on the Button Create Events</p>
        
-       <Button variant="secondary" onClick={navigateToContacts}>
+       <Button variant="secondary" onClick={navigateToForm}>
         Create Events
       </Button>
      </div>

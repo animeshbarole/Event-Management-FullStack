@@ -2,9 +2,23 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const CustomCard = ({ title, imageSrc, content, date, time,venue }) => {
-  return (
+
+
+    const handleDelete= ()=>{
+    alert("The form is Deleted");
+    }
+
+    const handleUpdate= ()=>{
+        alert("The form is Updated");
+        }
+     
+
+ return (
 
     
     <Col>
@@ -20,8 +34,12 @@ const CustomCard = ({ title, imageSrc, content, date, time,venue }) => {
         <ListGroup.Item>Time: {time}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+      <Button variant="primary" className="card-button card-button-update" onClick={handleDelete}>
+      Update
+    </Button>
+    <Button variant="danger" className="card-button" onClick={handleUpdate}>
+    <FontAwesomeIcon icon={faTrash} fixedWidth /> Delete
+    </Button>
       </Card.Body>
     </Card>
     </Col>

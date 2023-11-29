@@ -1,5 +1,6 @@
 import './App.css';
 import Navbar from './components/navbar';
+import EventForm from './components/eventform';
 import { Route,Routes } from 'react-router-dom';
 import Login  from './pages/login';
 import Home from './pages/home';
@@ -21,6 +22,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/eventform" element={<EventForm />} />
           <Route path="/yourEvents" element={<YourEvents />} />
           <Route path="/login" element={<Login />} />
           <Route path="/upcomingEvents" element={<UpcomingEvents />} />

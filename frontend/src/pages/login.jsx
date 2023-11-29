@@ -3,14 +3,12 @@ import React from 'react'
 
 
 
-
-
 const login = () => {
 
     
 const onSubmit = ()=>{
       
-
+  
      
 
     alert("Form is Submitted");
