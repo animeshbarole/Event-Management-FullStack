@@ -1,3 +1,32 @@
+
+
+
+/* Home Page CSs */
+
+.home {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .home h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .home p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+
+
+
+/*  Login CSS  */
+
 .formContainer {
 
     background: linear-gradient(-45deg, #eb6e48, #dd296e, #1ca5d7, #18d9ac);
@@ -37,3 +66,4 @@
     color: #5d5b8d;
     font-size: 20px;
 }
+

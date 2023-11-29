@@ -24,6 +24,8 @@ function App() {
           <Route path="/yourEvents" element={<YourEvents />} />
           <Route path="/login" element={<Login />} />
           <Route path="/upcomingEvents" element={<UpcomingEvents />} />
+         
+
         </Routes>
       </div>
 

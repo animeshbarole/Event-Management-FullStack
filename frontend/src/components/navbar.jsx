@@ -2,6 +2,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 
 const NavbarComp= ()=> {
@@ -19,6 +23,20 @@ const NavbarComp= ()=> {
           
         </Nav>
         </Navbar.Collapse>
+        <Form inline>
+        <Row>
+          <Col xs="auto">
+            <Form.Control
+              type="text"
+              placeholder="Search"
+              className=" mr-sm-2"
+            />
+          </Col>
+          <Col xs="auto">
+            <Button type="submit">Explore</Button>
+          </Col>
+        </Row>
+      </Form>
       </Container>
     </Navbar>
   );

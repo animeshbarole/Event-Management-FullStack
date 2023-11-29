@@ -1,8 +1,11 @@
 import React from 'react'
+import Eventform from '../components/eventform'
 
 const yourEvents = () => {
   return (
-    <div>yourEvents</div>
+    <div>
+        <Eventform/>
+    </div>
   )
 }
 
