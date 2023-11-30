@@ -1,19 +1,56 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 
-const login = () => {
-
+const Login = () => {
     
-const onSubmit = ()=>{
-      
-  
-     
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    alert("Form is Submitted");
-    console.log("Form is submitted")
-}
+
+  const navigate  =useNavigate();
+    
+  async function handleFormSubmit (e) {
+    e.preventDefault();
+
+    // Validate form inputs (you can add more validation logic)
+    if (!email || !password ) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    // Create an event object with the form data
+     const response = await fetch('http://localhost:4001/api/login',{
+             
+              method :'GET',
+              headers:{
+                  'Content-Type':'application/json',
+                },
+
+                body:JSON.stringify({
+                  
+                  email,
+                  password,
+                  
+                }),
+        });
+    
+    // Call the onEventSubmit callback to handle the submitted event
+    const data = await response.json();
+    console.log(data);
+    
+    
+
+
+
+    // Clear the form fields after submission
+    setEmail('');
+    setPassword('');
+    
+  
+  };
   return (
     <div>
     <div className = "formContainer">
@@ -21,18 +58,28 @@ const onSubmit = ()=>{
        <span className='logo'>Event Management</span>
        <span className='title'>Login</span>
 
-            <form onSubmit={onSubmit} >
+            <form onSubmit={handleFormSubmit} >
 
-                
-                <input type="email" placeholder='email' />
+              
+                <input
+                value={email}
+                 type="email" 
+                 placeholder='email'
+                 onChange={(e)=>setEmail(e.target.value)}
+                 />
              
                
-                <input type="password" placeholder='password' />
+                <input 
+                value={password}
+                type="password" 
+                placeholder='password'
+                onChange={(e)=>setPassword(e.target.value)}
+                />
                
-                <button>Sign in</button>
+                <button > Login</button>
              
             </form>
-            <p>Dont have any Account ?  <Link to={"/register"}>Register</Link></p>
+            <p>Don't  you have an Account ?  <Link to={"/register"}>Register</Link></p>
         </div>
 
     </div>
@@ -40,4 +87,4 @@ const onSubmit = ()=>{
   )
 }
 
-export default login
+export default Login
