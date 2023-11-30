@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './components/navbar';
+
 import EventForm from './components/eventform';
 import { Route,Routes } from 'react-router-dom';
 import Login  from './pages/login';
@@ -19,7 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+     
       <div>
         <Routes>
           <Route path="/" element={<Home />} />

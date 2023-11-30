@@ -3,10 +3,10 @@ const app = express();
 const {ServerConfig} = require('./config');
 const cors =require("cors");
 const mongoose = require('mongoose');
-
-
-
 const apirouter = require('./routes')
+
+
+
 
 app.use(cors());
 app.use(express.json());
@@ -19,9 +19,6 @@ mongoose.connect('mongodb://localhost:27017/Event-Management')
 
 app.use('/api',apirouter);
 
-app.get('/', (req, res) => {
-  res.json({message:"Welcome to application"});
-});
 
 
 

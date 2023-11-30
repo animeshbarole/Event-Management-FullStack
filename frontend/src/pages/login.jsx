@@ -24,7 +24,7 @@ const Login = () => {
     // Create an event object with the form data
      const response = await fetch('http://localhost:4001/api/login',{
              
-              method :'GET',
+              method :'POST',
               headers:{
                   'Content-Type':'application/json',
                 },
@@ -39,7 +39,16 @@ const Login = () => {
     
     // Call the onEventSubmit callback to handle the submitted event
     const data = await response.json();
-    console.log(data);
+     
+    if(data.user)
+    {
+      alert('Login SuceessFull');
+      navigate('/home')
+    }
+    else
+    {
+      alert("Please Check Again");
+    }
     
     
 

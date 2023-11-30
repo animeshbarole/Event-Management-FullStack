@@ -1,11 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Navbar from '../components/navbar';
 import Button from 'react-bootstrap/Button';
 import {useNavigate} from 'react-router-dom';
-
+import jwt from 'jsonwebtoken';
 const Home = () => {
  
  
-   
+    //  useEffect(()=>{
+    //         const token =localStorage.getItem('token');
+    //         if(token)
+    //         {
+    //          const user  = jwt.decode(token)
+    //          console.log(user)
+    //         }
+    //  },[]) 
+//
+
+
+
+
+
+
+
+
+
+
+
     const navigate = useNavigate();
 
     const navigateToForm = () => {
@@ -16,8 +36,11 @@ const Home = () => {
    
     return (
 
+   <div>
 
+      <Navbar/>
     <div className="home">
+     
     <h1>Welcome to the Event Management Website!</h1>
     <p>This website is a one-stop shop for all your event management needs. You can use it to create and manage events, track RSVPs, and sell tickets.
     To get started, simply create an account and then click on the "Create Event" button. You will then be guided through the process of creating your event.
@@ -39,7 +62,7 @@ const Home = () => {
 
   </div>
 
-   
+  </div>
     
     
 
