@@ -2,19 +2,17 @@ import React, { useEffect } from 'react'
 import Navbar from '../components/navbar';
 import Button from 'react-bootstrap/Button';
 import {useNavigate} from 'react-router-dom';
-import jwt from 'jsonwebtoken';
+
+import EventForm from '../components/eventform';
+
+
+
+
 const Home = () => {
  
- 
-    //  useEffect(()=>{
-    //         const token =localStorage.getItem('token');
-    //         if(token)
-    //         {
-    //          const user  = jwt.decode(token)
-    //          console.log(user)
-    //         }
-    //  },[]) 
-//
+  const navigate = useNavigate();
+   
+    
 
 
 
@@ -26,7 +24,6 @@ const Home = () => {
 
 
 
-    const navigate = useNavigate();
 
     const navigateToForm = () => {
        
@@ -39,6 +36,7 @@ const Home = () => {
    <div>
 
       <Navbar/>
+
     <div className="home">
      
     <h1>Welcome to the Event Management Website!</h1>
@@ -52,15 +50,14 @@ const Home = () => {
 
      <div className='events'>
        
-       <p> If you want to Create your own Event Please Click on the Button Create Events</p>
+       <p> If you want to Create your own Event Please Fill the Form to Create Events</p>
        
-       <Button variant="secondary" onClick={navigateToForm}>
-        Create Events
-      </Button>
+ 
      </div>
      
+     <EventForm/>
 
-  </div>
+     </div>
 
   </div>
     

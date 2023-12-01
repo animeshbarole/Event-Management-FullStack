@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
             return res.json({
                 status:'ok',
                 user:token,
-          
+               
             });
      }
      else 

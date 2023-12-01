@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 const EventForm = ({ onEventSubmit }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [imageSource, setImageSource] = useState('');
+ 
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [venue, setVenue] = useState('');
@@ -18,16 +18,17 @@ const EventForm = ({ onEventSubmit }) => {
     e.preventDefault();
 
     // Validate form inputs (you can add more validation logic)
-    if (!title || !description || !imageSource || !date || !time || !venue) {
+    if (!title || !description || !date || !time || !venue) {
       alert('Please fill in all fields');
       return;
     }
 
+
+      
     // Create an event object with the form data
     const newEvent = {
       title,
       description,
-      imageSource,
       date,
       time,
       venue,
@@ -44,7 +45,7 @@ const EventForm = ({ onEventSubmit }) => {
     // Clear the form fields after submission
     setTitle('');
     setDescription('');
-    setImageSource('');
+ 
     setDate('');
     setTime('');
     setVenue('');
@@ -74,15 +75,8 @@ const EventForm = ({ onEventSubmit }) => {
               />
             </label>
             <br />
-            <label>
-              Image Source:
-              <input
-                type="text"
-                value={imageSource}
-                onChange={(e) => setImageSource(e.target.value)}
-              />
-            </label>
-            <br />
+            
+            
             <label>
               Date:
               <input

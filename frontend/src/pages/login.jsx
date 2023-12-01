@@ -39,11 +39,13 @@ const Login = () => {
     
     // Call the onEventSubmit callback to handle the submitted event
     const data = await response.json();
-     
+    console.log(data.user);  
+   
     if(data.user)
     {
+      localStorage.setItem('token',data);
       alert('Login SuceessFull');
-      navigate('/home')
+      navigate('/')
     }
     else
     {
