@@ -10,8 +10,6 @@ import Button from 'react-bootstrap/Button';
 
 const NavbarComp= ()=> {
 
-
-
   return (
     <Navbar  bg="dark" data-bs-theme="dark">
       <Container>
