@@ -9,7 +9,7 @@ const eventSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true,
-  },
+  },                                       
   date: {
     type: Date,
     required: true,
@@ -20,11 +20,6 @@ const eventSchema = new mongoose.Schema({
   },
   venue: {
     type: String,
-    required: true,
-  },
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Users', // This should match the model name you defined for users
     required: true,
   },
 

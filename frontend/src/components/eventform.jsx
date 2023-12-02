@@ -14,7 +14,7 @@ const EventForm = ({ onEventSubmit }) => {
   const navigate = useNavigate();
 
 
-  const handleFormSubmit = (e) => {
+ async function handleFormSubmit (e) {
     e.preventDefault();
 
     // Validate form inputs (you can add more validation logic)
@@ -26,18 +26,29 @@ const EventForm = ({ onEventSubmit }) => {
 
       
     // Create an event object with the form data
-    const newEvent = {
-      title,
-      description,
-      date,
-      time,
-      venue,
-    };
-    
-    // Call the onEventSubmit callback to handle the submitted event
+    const response = await fetch('http://localhost:4001/api/events',{
+             
+    method :'POST',
+    headers:{
+        'Content-Type':'application/json',
+      },
 
-    console.log(newEvent);
-    navigate('/yourEvents');
+      body:JSON.stringify({
+        
+        title,
+        description,
+        date,
+        time,
+        venue,
+        
+      }),
+});
+
+    // Call the onEventSubmit callback to handle the submitted event
+    
+     const data = await response.json();
+    console.log(data);
+    navigate('/upcomingEvents');
     
 
 

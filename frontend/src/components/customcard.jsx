@@ -6,12 +6,34 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-const CustomCard = ({ title, imageSrc, content, date, time,venue }) => {
+
+const CustomCard = ({ title, imageSrc, content, date, time,venue,eventID }) => {
 
 
-    const handleDelete= ()=>{
-    alert("The form is Deleted");
+  
+
+ 
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`http://localhost:4001/api/events/${eventID}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        alert('Event deleted successfully');
+        window.location.reload();
+        // Call the parent component's onDelete callback to update the state
+      } else {
+        const data = await response.json();
+        alert(`Failed to delete event: ${data.error}`);
+      }
+    } catch (error) {
+      console.error('Error deleting event:', error);
     }
+  };
 
     const handleUpdate= ()=>{
         alert("The form is Updated");
@@ -34,10 +56,10 @@ const CustomCard = ({ title, imageSrc, content, date, time,venue }) => {
         <ListGroup.Item>Time: {time}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-      <Button variant="primary" className="card-button card-button-update" onClick={handleDelete}>
+      <Button variant="primary" className="card-button card-button-update" onClick={handleUpdate}>
       Update
     </Button>
-    <Button variant="danger" className="card-button" onClick={handleUpdate}>
+    <Button variant="danger" className="card-button" onClick={handleDelete}>
     <FontAwesomeIcon icon={faTrash} fixedWidth /> Delete
     </Button>
       </Card.Body>

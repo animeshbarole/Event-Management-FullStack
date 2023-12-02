@@ -35,8 +35,9 @@ const Home = () => {
 
    <div>
 
-      <Navbar/>
-
+    
+  
+     
     <div className="home">
      
     <h1>Welcome to the Event Management Website!</h1>

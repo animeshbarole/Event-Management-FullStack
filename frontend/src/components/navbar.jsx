@@ -17,7 +17,7 @@ const NavbarComp= ()=> {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as ={Link} to = {"/"}>Home</Nav.Link>
-            <Nav.Link as ={Link} to = {"/yourEvents"}>Your Events</Nav.Link>
+         
             <Nav.Link as ={Link} to = {"/upcomingEvents"}>Upcoming Events</Nav.Link>
             
             <button onClick={""}>Logout</button>

@@ -1,74 +1,47 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomCard from '../components/customcard';
 
 import Row from 'react-bootstrap/Row';
 
 
-const upcomingEvents = () => {
-    const cardData = [
-      {
-        title: 'Arijit Concert',
-        imageSrc: 'https://w0.peakpx.com/wallpaper/97/713/HD-wallpaper-arjith-singh-bollywood-singer.jpg',
-        content: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-        date: '2023-11-30',
-        time: '19:00:00',
-        venue:'Kalani Nagar, Indore MP',
-      },
-      {
-        title: 'BirthDay Party Event',
-        imageSrc: 'https://cdn.firstcry.com/education/2022/12/29111202/101-Of-Planning-An-Unforgettable-Kids-Birthday-Party.jpg',
-        content: 'This is the Event to Invite my Friends into Birthday',
-        date: '2023-11-29',
-        time: '15:30:00',
-        venue: 'Indore ,MP'
-      },
-      {
-        title: 'BirthDay Party Event',
-        imageSrc: 'https://cdn.firstcry.com/education/2022/12/29111202/101-Of-Planning-An-Unforgettable-Kids-Birthday-Party.jpg',
-        content: 'This is the Event to Invite my Friends into Birthday',
-        date: '2023-11-29',
-        time: '15:30:00',
-        venue: 'Indore ,MP'
-      },
-      // Add more card data as needed
-    ];
+const UpcomingEvents = () => {
 
- 
-    const currentDate = new Date();
+  const [events,setEvents] = useState([]);
 
-    // Sort the cards based on the time difference from the current date and time
-    const sortedCards = cardData.sort((a, b) => {
-      const dateA = new Date(a.date + ' ' + a.time);
-      const dateB = new Date(b.date + ' ' + b.time);
-  
-      // Calculate the time difference in milliseconds
-      const timeDifferenceA = Math.abs(dateA - currentDate);
-      const timeDifferenceB = Math.abs(dateB - currentDate);
-  
-      return timeDifferenceA - timeDifferenceB;
-    });
-
+  useEffect(() => {
+    // Fetch data from the backend API
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:4001/api/events'); // Replace with your actual API endpoint
+        const data = await response.json();
+        setEvents(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+   
 
 
   
     return (
       <div>
-
-<Row xs="auto" className="g-4">
-        {sortedCards.map((card, index) => (
+      <Row xs="auto" className="g-4">
+        {events.map((event, index) => (
           <CustomCard
             key={index}
-            title={card.title}
-            imageSrc={card.imageSrc}
-            content={card.content}
-            date={card.date}
-            time={card.time}
-            venue={card.venue}
+            title={event.title}
+            eventID = {event._id}
+            imageSrc={"https://cdn.firstcry.com/education/2022/12/29111202/101-Of-Planning-An-Unforgettable-Kids-Birthday-Party.jpg"} // You should have a field for imageSrc in your Event model
+            content={event.description}
+            date={event.date}
+            time={event.time}
+            venue={event.venue}
           />
         ))}
-</Row>
-
-      </div>
+      </Row>
+    </div>
     );
   };
-export default upcomingEvents
+export default UpcomingEvents

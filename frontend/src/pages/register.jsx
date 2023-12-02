@@ -41,7 +41,7 @@ const Register = () => {
     // Call the onEventSubmit callback to handle the submitted event
     const data = await response.json();
     console.log(data);
-    
+    navigate('/login');    
     
 
 
