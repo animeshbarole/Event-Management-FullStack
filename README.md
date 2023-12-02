@@ -22,7 +22,7 @@ Please note that authentication features are not implemented in this version.
 - User registration
 - User login
 - Event creation
-- Event management (update, delete)
+- Event management (delete)
 
 ## Getting Started
 
@@ -39,3 +39,40 @@ Before you begin, ensure you have the following dependencies installed:
 
 ```bash
 git clone https://github.com/your-username/event-management.git
+````
+
+## Usage
+### User Registration
+To register a new user, follow these steps:
+
+-Open the application in your preferred web browser.
+-Click on the "Register" button.
+-Fill in the required information (e.g., username, email, password).
+-Click the "Submit" button to register.
+
+### User Login
+To log in as a registered user:
+
+-Open the application in your preferred web browser.
+-Click on the "Login" button.
+-Enter your credentials (username or email and password).
+-Click the "Login" button to access your account.
+
+### Event Creation
+To create a new event:
+
+
+-Navigate to the "Create Event" section.
+-Fill in the event details (e.g., title, date, location).
+-Click the "Create Event" button to add the event.
+
+### Event Management
+To manage events:
+
+-Log in as a registered user.
+-Navigate to the "Upcoming Events" section.
+-Here, you can view, or delete your created events.
+
+## Contributing
+Feel free to contribute to the development of this project! Check out the contributing guidelines for more information.
+
