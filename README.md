@@ -3,6 +3,9 @@
 
 Welcome to the Event Management System! This project allows users to perform basic event management tasks, such as creating and managing events. 
 Please note that authentication features are not implemented in this version.
+## Video 
+
+https://github.com/animeshbarole/Event-Management-FullStack/assets/96922957/de4b42ce-88c4-4664-a81e-54eced3b6ba8
 
 ## Table of Contents
 - [Features](#features)
@@ -80,7 +83,5 @@ To manage events:
 ## Contributing
 Feel free to contribute to the development of this project! Check out the contributing guidelines for more information.
 
-## Video 
 
-https://github.com/animeshbarole/Event-Management-FullStack/assets/96922957/de4b42ce-88c4-4664-a81e-54eced3b6ba8
 
