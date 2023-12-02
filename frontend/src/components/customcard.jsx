@@ -5,11 +5,32 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
-
+import Badge from "react-bootstrap/Badge";
 const CustomCard = ({ title, imageSrc, content, date, time,venue,eventID }) => {
 
+   
+   let badgeText;
+   let badgeVariant;
+    
+  var givenDateStr = date;
+  var givenDate = new Date(givenDateStr);
+  var standardDateFormat = givenDate.toISOString().split('T')[0];
 
+  var currentDate = new Date();
+
+  if (givenDate >= currentDate) {
+    
+    badgeText = "Active";
+    badgeVariant = "success";
+
+} else{
+  badgeText = "Inactive";
+  badgeVariant = "danger";
+}  
+  
+
+
+ 
   
 
  
@@ -35,9 +56,7 @@ const CustomCard = ({ title, imageSrc, content, date, time,venue,eventID }) => {
     }
   };
 
-    const handleUpdate= ()=>{
-        alert("The form is Updated");
-        }
+   
      
 
  return (
@@ -45,6 +64,21 @@ const CustomCard = ({ title, imageSrc, content, date, time,venue,eventID }) => {
     
     <Col>
     <Card style={{ width: '18rem' }}>
+    <div style={{
+            display : "flex",
+            justifyContent : "flex-end",
+            position : "absolute",
+            right :"0",
+          }}>
+          <Badge
+            className=" badge rounded-pill"
+          
+            bg={badgeVariant}
+          >
+           {badgeText}
+          </Badge>
+          <span className="visually-hidden">unread messages</span>
+          </div>
       <Card.Img variant="top" src={imageSrc} />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
@@ -52,13 +86,11 @@ const CustomCard = ({ title, imageSrc, content, date, time,venue,eventID }) => {
       </Card.Body>
       <ListGroup className="list-group-flush">
       <ListGroup.Item>Venue: {venue}</ListGroup.Item>
-        <ListGroup.Item>Date: {date}</ListGroup.Item>
+        <ListGroup.Item>Date: {standardDateFormat}</ListGroup.Item>
         <ListGroup.Item>Time: {time}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-      <Button variant="primary" className="card-button card-button-update" onClick={handleUpdate}>
-      Update
-    </Button>
+     
     <Button variant="danger" className="card-button" onClick={handleDelete}>
     <FontAwesomeIcon icon={faTrash} fixedWidth /> Delete
     </Button>

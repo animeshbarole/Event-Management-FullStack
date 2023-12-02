@@ -33,7 +33,7 @@ const UpcomingEvents = () => {
             key={index}
             title={event.title}
             eventID = {event._id}
-            imageSrc={"https://cdn.firstcry.com/education/2022/12/29111202/101-Of-Planning-An-Unforgettable-Kids-Birthday-Party.jpg"} // You should have a field for imageSrc in your Event model
+            imageSrc={"https://media.istockphoto.com/id/974238866/photo/audience-listens-to-the-lecturer-at-the-conference.jpg?s=612x612&w=0&k=20&c=p_BQCJWRQQtZYnQlOtZMzTjeB_csic8OofTCAKLwT0M="} // You should have a field for imageSrc in your Event model
             content={event.description}
             date={event.date}
             time={event.time}

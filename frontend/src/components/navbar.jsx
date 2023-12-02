@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {Link} from 'react-router-dom';
+import {Link,  useNavigate} from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,6 +9,9 @@ import Button from 'react-bootstrap/Button';
 
 
 const NavbarComp= ()=> {
+
+
+
   return (
     <Navbar  bg="dark" data-bs-theme="dark">
       <Container>
@@ -20,7 +23,7 @@ const NavbarComp= ()=> {
          
             <Nav.Link as ={Link} to = {"/upcomingEvents"}>Upcoming Events</Nav.Link>
             
-            <button onClick={""}>Logout</button>
+            <button onClick={''}>Logout</button>
           
         </Nav>
         </Navbar.Collapse>
