@@ -70,9 +70,17 @@ To create a new event:
 To manage events:
 
 - Log in as a registered user.
+
+
+
+
 - Navigate to the "Upcoming Events" section.
 - Here, you can view, or delete your created events.
 
 ## Contributing
 Feel free to contribute to the development of this project! Check out the contributing guidelines for more information.
+
+## Video 
+
+https://github.com/animeshbarole/Event-Management-FullStack/assets/96922957/de4b42ce-88c4-4664-a81e-54eced3b6ba8
 
